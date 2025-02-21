@@ -80,7 +80,7 @@ ZMALoader.setOnLoad(function (mapOptions, error) {
     const mapElement = document.getElementById('ZMap');
 
     mapOptions.center = new ZDC.LatLng(lat, lng);
-    mapOptions.zipsMapType = 'VeAmBrmV';
+    mapOptions.zipsMapType = 'kP8KjZdn';
     mapOptions.mouseWheelReverseZoom = true;
 
     map = new ZDC.Map(
