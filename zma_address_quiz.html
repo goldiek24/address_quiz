@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>難読住所クイズ</title>
+    <script src="https://test-js.zmaps-api.com/zma_loader.js?key=gkZZ5thvD128fdg5OFYGa4nhJCctGemb9FKvZWx3&auth=referer"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #4169e1;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        #ZMap {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .quiz-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 20px;
+            background-color: #ffc0cb;
+            color: #4169e1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff69b4;
+            transform: scale(1.05);
+        }
+        .hidden {
+            display: none;
+        }
+        #result {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏠 難読住所クイズ 🏠</h1>
+    
+    <div id="quiz-container" class="quiz-container"></div>
+    
+    <div id="ZMap"></div>
+
+    <div id="result" class="hidden">
+        <h2>結果</h2>
+        <p>正解: <span id="correct-answer"></span></p>
+        <p>住所: <span id="result-address"></span></p>
+        <p>読み: <span id="result-address_read"></span></p>
+        <p>緯度: <span id="result-lat"></span></p>
+        <p>経度: <span id="result-lng"></span></p>
+    </div>
+
+    <script src="zma_address_quiz.js"></script>
+</body>
+</html>
