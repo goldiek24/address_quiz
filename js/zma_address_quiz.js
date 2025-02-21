@@ -87,7 +87,7 @@ ZMALoader.setOnLoad(function (mapOptions, error) {
         mapElement,
         mapOptions,
         function() {
-            map.addControl(new ZDC.ZoomButton('bottom-right'));
+            map.addControl(new ZDC.ZoomButton('bottom-right', new ZDC.Point(-20, -35)));
             map.addControl(new ZDC.Compass('top-right'));
             map.addControl(new ZDC.ScaleBar('bottom-left'));
         },
