@@ -175,11 +175,49 @@ async function searchAddress(address) {
             document.getElementById("result-address_read").textContent = data.result.item[0].address_read;
             document.getElementById("result-lat").textContent = lat;
             document.getElementById("result-lng").textContent = lng;
+
+            // 地図の移動とマーカーの追加が完了したことを示すPromiseを返す
+            return new Promise(resolve => {
+                setTimeout(resolve, 2000); // 2秒待機して地図の表示を確認
+            });
         } else {
             alert("住所の位置情報が見つかりませんでした");
         }
     } catch (error) {
         console.error("エラーが発生しました:", error);
         alert("住所の検索中にエラーが発生しました");
+    }
+}
+
+async function checkAnswer(selectedAnswer) {
+    const correctAnswer = quizData[currentQuiz].correctAnswer;
+    if (selectedAnswer === correctAnswer) {
+        await searchAddress(correctAnswer);
+        document.getElementById('correct-answer').textContent = correctAnswer;
+        document.getElementById('result').classList.remove('hidden');
+        
+        currentQuiz++;
+        if (currentQuiz < quizData.length) {
+            setTimeout(() => {
+                // 東京駅の中心地に移動
+                const tokyoStationLatLng = new ZDC.LatLng(35.681406, 139.767132);
+                map.setCenter(tokyoStationLatLng);
+                
+                // マーカーを削除
+                if (mrk_widget) {
+                    map.removeWidget(mrk_widget);
+                }
+                
+                // 結果表示を隠す
+                document.getElementById('result').classList.add('hidden');
+                
+                // 次のクイズを読み込む
+                loadQuiz();
+            }, 5000); // 5秒後に実行
+        } else {
+            alert('クイズ終了！お疲れ様でした。');
+        }
+    } else {
+        alert('不正解です。もう一度試してください。');
     }
 }
