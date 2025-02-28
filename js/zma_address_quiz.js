@@ -109,16 +109,46 @@ async function checkAnswer(selectedAnswer) {
         currentQuiz++;
         if (currentQuiz < quizData.length) {
             setTimeout(() => {
-                loadQuiz();
+                // 東京駅の中心地に移動
+                const tokyoStationLatLng = new ZDC.LatLng(35.681406, 139.767132);
+                map.setCenter(tokyoStationLatLng);
+                
+                // マーカーを削除
+                if (mrk_widget) {
+                    map.removeWidget(mrk_widget);
+                }
+                
+                // 結果表示を隠す
                 document.getElementById('result').classList.add('hidden');
-            }, 3000);
+                
+                // 次のクイズを読み込む
+                loadQuiz();
+            }, 5000); // 5秒後に実行
         } else {
-            alert('クイズ終了！お疲れ様でした。');
-        }
+            // クイズ終了時の処理
+            setTimeout(() => {
+                document.getElementById('quiz-container').innerHTML = '<h2>クイズ終了！お疲れ様でした。</h2>';
+                document.getElementById('top-button').classList.remove('hidden');
+                document.getElementById('result').classList.add('hidden');
+            }, 5000); // 5秒後に実行
+        }       
     } else {
         alert('不正解です。もう一度試してください。');
     }
 }
+
+function returnToFirstQuestion() {
+    currentQuiz = 0;
+    loadQuiz();
+    document.getElementById('top-button').classList.add('hidden');
+    document.getElementById('result').classList.add('hidden');
+    const tokyoStationLatLng = new ZDC.LatLng(35.681406, 139.767132);
+    map.setCenter(tokyoStationLatLng);
+    if (mrk_widget) {
+        map.removeWidget(mrk_widget);
+    }
+}
+
 
 async function searchAddress(address) {
     try {
@@ -189,35 +219,4 @@ async function searchAddress(address) {
     }
 }
 
-async function checkAnswer(selectedAnswer) {
-    const correctAnswer = quizData[currentQuiz].correctAnswer;
-    if (selectedAnswer === correctAnswer) {
-        await searchAddress(correctAnswer);
-        document.getElementById('correct-answer').textContent = correctAnswer;
-        document.getElementById('result').classList.remove('hidden');
-        
-        currentQuiz++;
-        if (currentQuiz < quizData.length) {
-            setTimeout(() => {
-                // 東京駅の中心地に移動
-                const tokyoStationLatLng = new ZDC.LatLng(35.681406, 139.767132);
-                map.setCenter(tokyoStationLatLng);
-                
-                // マーカーを削除
-                if (mrk_widget) {
-                    map.removeWidget(mrk_widget);
-                }
-                
-                // 結果表示を隠す
-                document.getElementById('result').classList.add('hidden');
-                
-                // 次のクイズを読み込む
-                loadQuiz();
-            }, 5000); // 5秒後に実行
-        } else {
-            alert('クイズ終了！お疲れ様でした。');
-        }
-    } else {
-        alert('不正解です。もう一度試してください。');
-    }
-}
+

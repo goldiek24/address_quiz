@@ -61,6 +61,17 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-top: 20px;
         }
+        #top-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #top-button button {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #top-button button:hover {
+            background-color: #45a049;
+        }        
     </style>
 </head>
 <body>
@@ -77,6 +88,10 @@
         <p>読み: <span id="result-address_read"></span></p>
         <p>緯度: <span id="result-lat"></span></p>
         <p>経度: <span id="result-lng"></span></p>
+    </div>
+
+    <div id="top-button" class="hidden">
+        <button onclick="returnToFirstQuestion()">問題1に戻る</button>
     </div>
 
     <script src="./js/zma_address_quiz.js"></script>
