@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YomiMap 関東編</title>
+    <script src="https://test-js.zmaps-api.com/zma_loader.js?key=gkZZ5thvD128fdg5OFYGa4nhJCctGemb9FKvZWx3&auth=referer"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #E3F2FD; /* 爽やかな青空イメージ */
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #1976D2;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        #ZMap {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+        }
+        .quiz-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 25px;
+            background-color: #FFEBEE; /* 桜のイメージ */
+            color: #D32F2F; /* 赤で関東・中部らしさを */
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #D32F2F;
+            color: white;
+            transform: scale(1.07);
+        }
+        .hidden {
+            display: none;
+        }
+        #result {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+            margin-top: 20px;
+        }
+        #top-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #top-button button {
+            background-color: #0288D1; /* 富士山の青をイメージ */
+            color: white;
+        }
+        #top-button button:hover {
+            background-color: #0277BD;
+        }
+    </style>
+</head>
+<body>
+    <h1>🗻🌸 YomiMap 関東編 🌸🗻</h1>
+    
+    <div id="quiz-container" class="quiz-container"></div>
+    
+    <div id="ZMap"></div>
+
+    <div id="result" class="hidden">
+        <h2>結果</h2>
+        <p>正解: <span id="correct-answer"></span></p>
+        <p>住所: <span id="result-address"></span></p>
+        <p>読み: <span id="result-address_read"></span></p>
+        <p>緯度: <span id="result-lat"></span></p>
+        <p>経度: <span id="result-lng"></span></p>
+    </div>
+
+    <div id="top-button" class="hidden">
+        <button onclick="returnToFirstQuestion()">問題1に戻る</button>
+    </div>
+
+    <script src="./js/address_quiz_kanto.js"></script>
+</body>
+</html>
