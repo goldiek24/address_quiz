@@ -3,54 +3,54 @@ let mrk_widget;
 
 const quizData = [
     {
-        question: "「行方」の読み方は？",
-        options: ["なめがた", "ゆくえ", "ぎょうほう"],
-        correctAnswer: "なめがた"
+        question: "「切差」の読み方は？",
+        options: ["きりさし", "きっさつ", "せっさ"],
+        correctAnswer: "きっさつ"
     },
     {
-        question: "「弘明寺町」の読み方は？",
-        options: ["こうめいじまち", "ひろあきでらまち", "ぐみょうじちょう"],
-        correctAnswer: "ぐみょうじちょう"
+        question: "「鋳物師屋」の読み方は？",
+        options: ["いもじや", "いものしや", "いもじちょう"],
+        correctAnswer: "いもじや"
     },
     {
-        question: "「東浪見」の読み方は？",
-        options: ["とらみ", "ひがしなみみ", "とうろうみ"],
-        correctAnswer: "とらみ"
+        question: "「日置江」の読み方は？",
+        options: ["ひきえ", "ひおきえ", "にっちえ"],
+        correctAnswer: "ひきえ"
     },
     {
-        question: "「風布」の読み方は？",
-        options: ["かざぬの", "ふうぷ", "かぜふ"],
-        correctAnswer: "ふうぷ"
+        question: "「獺ヶ通」の読み方は？",
+        options: ["かわうそがとおり", "だっがつう", "うすがどおり"],
+        correctAnswer: "うすがどおり"
     },
     {
-        question: "「御座入」の読み方は？",
-        options: ["みざのり", "ございり", "おまいり"],
-        correctAnswer: "みざのり"
+        question: "「羽咋」の読み方は？",
+        options: ["はくい", "はばき", "はねくい"],
+        correctAnswer: "はくい"
     },
     {
-        question: "「石神井」の読み方は？",
-        options: ["いしがみい", "せきじんせい", "しゃくじい"],
-        correctAnswer: "しゃくじい"
+        question: "「五十子」の読み方は？",
+        options: ["ごじゅうし", "いかご", "いかっこ"],
+        correctAnswer: "いかご"
     },
     {
-        question: "「七五三場」の読み方は？",
-        options: ["しめば", "しちごさんば", "ななごさんじょう"],
-        correctAnswer: "しめば"
+        question: "「下一光町」の読み方は？",
+        options: ["しもいっこうちょう", "しもひとみつちょう", "しもいかりちょう"],
+        correctAnswer: "しもいかりちょう"
     },
     {
-        question: "「東汗」の読み方は？",
-        options: ["ひがしあせ", "ひがしふざかし", "とうかん"],
-        correctAnswer: "ひがしふざかし"
+        question: "「住良木」の読み方は？",
+        options: ["すめらぎ", "じゅうりょうぼく", "すみらぎ"],
+        correctAnswer: "すめらぎ"
     },
     {
-        question: "「接骨木」の読み方は？",
-        options: ["せっこつぼく", "せつこつぎ", "にわとこ"],
-        correctAnswer: "にわとこ"
+        question: "「五十海」の読み方は？",
+        options: ["ごじゅうかい", "いかるみ", "いそうみ"],
+        correctAnswer: "いかるみ"
     },
     {
-        question: "「尻高」の読み方は？",
-        options: ["しりたか", "しったか", "しだか"],
-        correctAnswer: "しったか"
+        question: "「神谷」の読み方は？",
+        options: ["かみや", "こうや", "こんたに"],
+        correctAnswer: "こんたに"
     },
     // 他の問題を追加...
 ];
